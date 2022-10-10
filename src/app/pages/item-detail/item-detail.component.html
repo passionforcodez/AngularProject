@@ -1,0 +1,35 @@
+<app-page-header name="Product Detail Page"></app-page-header>
+<div class="container-fluid">
+  <ng-container *ngIf="!detail.name && loaded">
+    <div class="alert alert-primary" role="alert">
+      No detail identified for product id: {{productId || 'nil'}}
+    </div>
+  </ng-container>
+  <ng-container *ngIf="detail.name">
+    <div class="container">
+      <img
+        [src]="detail.img"
+        class="card-img-top"
+        alt="..."
+      />
+    </div>
+    <h5 class="card-title">{{ detail.name }}</h5>
+    <p class="card-text">{{ detail.description }}</p>
+    <p class="card-text">USD: {{ detail.price }}</p>
+    <label>Quantity:</label>
+    <select (change)="setQuantity($event)">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+      <option>6</option>
+      <option>7</option>
+    </select>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary" (click)="addToCart()">
+        Buy now
+      </button>
+    </div>
+  </ng-container>
+</div>

@@ -1,0 +1,19 @@
+.cart-item-container {
+    border: 1px solid #ccc;
+    margin: 2rem;
+    padding: 1rem;
+
+    .prod-price {
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    .qty-container, .total-container {
+        margin: 1rem 0;
+
+        .lbl, .total-price {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+    }
+}

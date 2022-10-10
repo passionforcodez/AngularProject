@@ -1,0 +1,21 @@
+.card {
+    width: 20rem;
+    display: inline-block;
+    margin: 1rem;
+
+    .card-desc {
+        min-height: 105px;
+    }
+    .card-price{
+        font-weight: bold;
+    }
+    .footer-btn-sec {
+        text-align: center;
+        .footer-btn {
+            min-width: 100px;
+            &.qv {
+                margin-right: 10px;
+            }
+        }
+    }
+}

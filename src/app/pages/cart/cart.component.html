@@ -1,0 +1,11 @@
+<app-page-header name="Shopping Cart Page"></app-page-header>
+
+<ng-container *ngIf="cartItems.length">
+    <app-cart-item *ngFor="let item of cartItems" [cartItem]="item"></app-cart-item>
+</ng-container>
+<div class="no-item" *ngIf="cartItems.length === 0">
+    <div class="alert alert-primary" role="alert">
+        Cart is empty. Start browsing the product 
+        <a routerLink="/list">here</a>
+    </div>
+</div>

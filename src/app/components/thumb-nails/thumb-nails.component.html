@@ -1,0 +1,22 @@
+<div class="card">
+    <img [src]="detail.img" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{detail.name}}</h5>
+      <p class="card-text card-desc">{{detail.description}}</p>
+      <p class="card-price">${{detail.price}}</p>
+      <div class="footer-btn-sec">
+        <button type="button" class="btn btn-primary footer-btn qv" (click)="openModal(template)">
+          Quickview
+        </button>
+        <button type="button" class="btn btn-primary footer-btn" (click)="navToDetail()">
+          Detail
+        </button>
+      </div>
+    </div>
+</div>
+
+<ng-template #template>
+  <app-modal modalName="prod-modal" [detail]="detail" (onSuccess)="addToCart($event)" (close)="closeModal($event)"></app-modal>
+</ng-template>
+
+

@@ -1,0 +1,18 @@
+<div class="cart-item-container">
+    <h5 class="prod-title">{{cartItem.name}}</h5>
+    <p class="prod-desc">{{cartItem.description}}</p>
+    <label class="prod-price">${{cartItem.price}}</label>
+    <div class="qty-container">
+        <label class="lbl">Quantity: </label>
+        <select (change)="quantityListener($event)">
+            <option *ngFor="let qty of quantityList" [selected]="getSelectedState(qty)">{{qty.label}}</option>
+        </select>
+    </div>
+    <div class="total-container">
+        <label class="lbl">Total Price: </label>
+        <span class="total-price">${{totalPrice}}</span>
+    </div>
+    <button type="button" class="btn btn-primary" (click)="removeProd()">
+        Remove
+    </button>
+</div>

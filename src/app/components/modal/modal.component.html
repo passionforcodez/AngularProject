@@ -1,0 +1,35 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <h3 class="modal-title" id="exampleModalLabel">Add Product</h3>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="closePopup()"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <h5 class="card-title">{{ detail.name }}</h5>
+    <p class="card-text">{{ detail.description }}</p>
+    <p class="card-price">${{ detail.price }}</p>
+    <label class="qty">Quantity:</label>
+    <!-- <app-dropdown name="qty-drpdwn" [options]="quantityList"></app-dropdown> -->
+    <select (change)="setQuantity($event)">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+      <option>6</option>
+      <option>7</option>
+    </select>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="closePopup()">
+      Cancel
+    </button>
+    <button type="button" class="btn btn-primary" (click)="onOk()">
+      Add To Cart
+    </button>
+  </div>
+</div>
